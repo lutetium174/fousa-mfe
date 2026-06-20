@@ -1,0 +1,130 @@
+/* --- Checkbox Wrapper --- */
+.pvCheckboxWrap {
+  display:     inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+}
+
+/* --- Hidden Input --- */
+.pvCheckboxInput {
+  position:  absolute;
+  width:     1px;
+  height:    1px;
+  padding:   0;
+  margin:    -1px;
+  overflow:  hidden;
+  clip:      rect(0, 0, 0, 0);
+  border:    0;
+}
+
+/* --- Custom Checkbox (Label) --- */
+.pvCheckboxLabel {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             .5rem;
+  cursor:          pointer;
+  position:        relative;
+  transition:      background var(--transition), border-color var(--transition);
+  user-select:     none;
+}
+
+.pvCheckboxLabel:hover:not(.pv-checkbox--disabled)::before {
+  border-color: var(--primary);
+}
+
+.pvCheckboxLabel::before {
+  content:        "";
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  width:         1rem;
+  height:        1rem;
+  border:        1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background:    var(--bg);
+  flex-shrink:   0;
+  transition:    inherit;
+}
+
+.pvCheckboxLabel:hover:not(.pv-checkbox--disabled)::before {
+  border-color: var(--primary);
+}
+
+/* --- Checked State --- */
+.pvCheckboxInput:checked + .pvCheckboxLabel::before {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.pvCheckboxInput:checked:hover:not(:disabled) + .pvCheckboxLabel::before {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.pvCheckboxInput:focus-visible + .pvCheckboxLabel::before {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+/* --- Check Icon --- */
+.pvCheckboxCheckIcon {
+  position: absolute;
+  left:     .125rem;
+  top:      50%;
+  transform: translateY(-50%);
+  width:    .75rem;
+  height:   .75rem;
+  color:    var(--primary-contrast);
+  display:  inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* --- Label Text --- */
+.pvCheckboxLabelText {
+  font-size:   var(--font-size-sm);
+  color:      var(--text-color);
+  line-height: 1;
+}
+
+/* --- Sizes --- */
+.pvCheckboxSM .pvCheckboxLabel::before {
+  width:  .875rem;
+  height: .875rem;
+}
+
+.pvCheckboxMD .pvCheckboxLabel::before {
+  width:  1rem;
+  height: 1rem;
+}
+
+.pvCheckboxLG .pvCheckboxLabel::before {
+  width:  1.125rem;
+  height: 1.125rem;
+}
+
+/* --- Disabled --- */
+.pvCheckboxDisabled {
+  opacity: .5;
+  cursor:  not-allowed;
+}
+
+.pvCheckboxInput:disabled + .pvCheckboxLabel::before {
+  border-color: var(--border);
+  background:  var(--bg-emphasis);
+}
+
+.pvCheckboxInput:disabled:checked + .pvCheckboxLabel::before {
+  background: var(--primary-100);
+  border-color: var(--primary-100);
+}
+
+/* --- Invalid --- */
+.pvCheckboxInvalid::before {
+  border-color: var(--red-500) !important;
+}
+
+.pvCheckboxInput:checked + .pvCheckboxInvalid::before {
+  background: var(--red-500);
+  border-color: var(--red-500);
+}

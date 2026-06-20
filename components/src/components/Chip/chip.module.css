@@ -1,0 +1,144 @@
+/* --- Chip --- */
+.pvChip {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             .375rem;
+  padding:         .25rem .625rem;
+  border:          1px solid transparent;
+  border-radius:   var(--radius-full);
+  font-family:     var(--font-sans);
+  font-weight:     500;
+  line-height:     1;
+  white-space:     nowrap;
+  cursor:          default;
+  transition:      background var(--transition), border-color var(--transition);
+  user-select:     none;
+}
+
+.pvChip:hover:not(.pv-chip--disabled) {
+  filter: brightness(1.1);
+}
+
+/* --- Severities --- */
+.pvChipPrimary {
+  background:   var(--primary);
+  color:        var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.pvChipSecondary {
+  background:   var(--severity-secondary-bg);
+  color:        var(--severity-secondary-text);
+  border-color: var(--severity-secondary-border);
+}
+
+.pvChipSuccess {
+  background:   var(--severity-success-bg);
+  color:        var(--severity-success-text);
+  border-color: var(--severity-success-border);
+}
+
+.pvChipInfo {
+  background:   var(--severity-info-bg);
+  color:        var(--severity-info-text);
+  border-color: var(--severity-info-border);
+}
+
+.pvChipWarn {
+  background:   var(--severity-warn-bg);
+  color:        var(--severity-warn-text);
+  border-color: var(--severity-warn-border);
+}
+
+.pvChipDanger {
+  background:   var(--severity-danger-bg);
+  color:        var(--severity-danger-text);
+  border-color: var(--severity-danger-border);
+}
+
+/* --- Sizes --- */
+.pvChipSM {
+  font-size: var(--font-size-xs);
+  padding:   .1875rem .5rem;
+  gap:       .25rem;
+}
+
+.pvChipMD {
+  font-size: var(--font-size-xs);
+  padding:   .25rem .625rem;
+  gap:       .375rem;
+}
+
+.pvChipLG {
+  font-size: var(--font-size-sm);
+  padding:   .375rem .75rem;
+  gap:       .5rem;
+}
+
+/* --- Chip Content --- */
+.pvChipImage {
+  width:  1.125rem;
+  height: 1.125rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display:   block;
+  flex-shrink: 0;
+}
+
+.pvChipIcon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size:   .875em;
+}
+
+.pvChipLabel {
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow:     hidden;
+}
+
+/* --- Remove Button --- */
+.pvChipRemove {
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  width:         1rem;
+  height:        1rem;
+  border:        none;
+  border-radius: var(--radius-full);
+  background:    transparent;
+  color:         currentColor;
+  cursor:        pointer;
+  padding:       0;
+  margin-left:   .125rem;
+  flex-shrink:   0;
+  transition:    color var(--transition), background var(--transition);
+  line-height:   1;
+}
+
+.pvChipRemove:hover:not(:disabled) {
+  background: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.pvChipRemove:focus-visible {
+  outline:        2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.pvChipRemove svg {
+  width:  .875rem;
+  height: .875rem;
+}
+
+/* --- Disabled --- */
+.pvChipDisabled {
+  opacity: .5;
+  cursor:  not-allowed;
+}
+
+.pvChipDisabled .pvChipRemove {
+  cursor: not-allowed;
+  opacity: .7;
+}

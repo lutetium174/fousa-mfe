@@ -1,0 +1,96 @@
+.pvField {
+  display:        flex;
+  flex-direction: column;
+  gap:            .375rem;
+  font-family:    var(--font-sans);
+}
+
+.pvFieldLabel {
+  font-size:   var(--font-size-sm);
+  font-weight: 500;
+  color:       var(--text-color);
+}
+
+/* --- Wrapper --- */
+.pvSelectWrap {
+  position:    relative;
+  display:     flex;
+  align-items: center;
+}
+
+.pvSelect {
+  width:         100%;
+  border:        1px solid var(--border);
+  border-radius: var(--radius-md);
+  background:    var(--bg);
+  color:         var(--text-color);
+  font-family:   var(--font-sans);
+  transition:    border-color var(--transition), box-shadow var(--transition);
+  outline:       none;
+  appearance:    none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+  background-size: 1.1em;
+  padding-right: 2.5rem;
+}
+
+.pvSelect::placeholder { color: var(--text-muted); }
+
+.pvSelect:hover:not(:disabled) { border-color: var(--surface-400); }
+
+.pvSelect:focus {
+  border-color: var(--border-focus);
+  box-shadow:   0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.pvSelect:disabled {
+  background: var(--bg-emphasis);
+  color:      var(--text-muted);
+  cursor:     not-allowed;
+}
+
+/* --- Sizes --- */
+.pvSelectWrapSM .pvSelect { padding: .3rem .6rem;  font-size: var(--font-size-xs);  }
+.pvSelectWrapMD .pvSelect { padding: .45rem .75rem; font-size: var(--font-size-sm); }
+.pvSelectWrapLG .pvSelect { padding: .6rem 1rem;   font-size: var(--font-size-base);}
+
+/* --- Filled variant --- */
+.pvSelectWrapFilled .pvSelect {
+  background:    var(--bg-emphasis);
+  border-color:  transparent;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.pvSelectWrapFilled .pvSelect:focus {
+  border-bottom-color: var(--border-focus);
+  box-shadow: none;
+}
+
+/* --- Invalid --- */
+.pvSelectWrapInvalid .pvSelect {
+  border-color: var(--red-500);
+}
+
+.pvSelectWrapInvalid .pvSelect:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--red-500) 20%, transparent);
+}
+
+/* --- Disabled --- */
+.pvSelectWrapDisabled .pvSelect {
+  background: var(--bg-emphasis);
+  color:      var(--text-muted);
+  cursor:     not-allowed;
+}
+
+/* --- Helper / error text --- */
+.pvFieldMessage {
+  font-size: var(--font-size-xs);
+  color:     var(--text-muted);
+  margin:    0;
+}
+
+.pvFieldMessageError {
+  color: var(--red-600);
+}

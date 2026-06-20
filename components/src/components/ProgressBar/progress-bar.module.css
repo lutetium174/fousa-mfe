@@ -1,0 +1,83 @@
+/* --- Progress Bar --- */
+.pvProgressBar {
+  display:        flex;
+  flex-direction: column;
+  gap:            .375rem;
+  font-family:    var(--font-sans);
+}
+
+.pvProgressBarLabel {
+  font-size:   var(--font-size-sm);
+  font-weight: 500;
+  color:      var(--text-color);
+}
+
+/* --- Track --- */
+.pvProgressBarTrack {
+  position:    relative;
+  height:      .75rem;
+  background:  var(--bg-emphasis);
+  border-radius: var(--radius-md);
+  overflow:    hidden;
+}
+
+/* --- Flat variant --- */
+.pvProgressBarTrackFlat {
+  border: 1px solid var(--border);
+}
+
+/* --- Raised variant --- */
+.pvProgressBarTrackRaised {
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Value (fill) --- */
+.pvProgressBarValue {
+  position: absolute;
+  top:       0;
+  left:      0;
+  height:    100%;
+  border-radius: var(--radius-md);
+  transition: width var(--transition);
+}
+
+.pvProgressBarValuePrimary {
+  background: var(--primary);
+}
+
+.pvProgressBarValueSecondary {
+  background: var(--severity-secondary-bg);
+}
+
+.pvProgressBarValueSuccess {
+  background: var(--severity-success-bg);
+}
+
+.pvProgressBarValueInfo {
+  background: var(--severity-info-bg);
+}
+
+.pvProgressBarValueWarn {
+  background: var(--severity-warn-bg);
+}
+
+.pvProgressBarValueDanger {
+  background: var(--severity-danger-bg);
+}
+
+/* --- Value Text --- */
+.pvProgressBarText {
+  position: absolute;
+  top:      50%;
+  left:     50%;
+  transform: translate(-50%, -50%);
+  font-size:   var(--font-size-xs);
+  font-weight: 600;
+  color:       var(--text-color);
+  white-space: nowrap;
+}
+
+/* --- Sizes --- */
+.pvProgressBarSM .pvProgressBarTrack { height: .5rem; }
+.pvProgressBarMD .pvProgressBarTrack { height: .75rem; }
+.pvProgressBarLG .pvProgressBarTrack { height: 1rem; }

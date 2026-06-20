@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/types",
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "declarationDir": "dist/types",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "moduleResolution": "Node",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0"
+  },
+  "paths": {
+    "@/*": ["src/*"],
+    "@viewer/*": ["viewer/*"]
+  },
+  "include": ["src", "viewer/stories/*", "viewer/src/stories/InputGroup.stories.tsx"],
+  "exclude": ["dist", "node_modules"]
+}

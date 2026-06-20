@@ -1,0 +1,170 @@
+/* --- Radio Group --- */
+.pvRadioGroup {
+  display:        flex;
+  flex-direction: column;
+  gap:            .375rem;
+  font-family:    var(--font-sans);
+  padding:        .25rem;
+}
+
+.pvRadioGroupLabel {
+  display:     block;
+  font-size:   var(--font-size-sm);
+  font-weight: 500;
+  color:       var(--text-color);
+  margin-bottom: .375rem;
+  padding:     0 .125rem;
+}
+
+.pvRadioGroupMessage {
+  font-size: var(--font-size-xs);
+  color:     var(--text-muted);
+  margin:    .25rem .125rem 0;
+}
+
+.pvRadioGroupMessageError {
+  color: var(--red-600);
+}
+
+/* --- Radio Button Wrapper --- */
+.pvRadioButtonWrap {
+  display:     inline-flex;
+  align-items: center;
+}
+
+/* --- Hidden Input --- */
+.pvRadioInput {
+  position:  absolute;
+  width:     1px;
+  height:    1px;
+  padding:   0;
+  margin:    -1px;
+  overflow:  hidden;
+  clip:      rect(0, 0, 0, 0);
+  border:    0;
+}
+
+/* --- Custom Radio (Label) --- */
+.pvRadioLabel {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             .5rem;
+  cursor:          pointer;
+  position:        relative;
+  transition:      background var(--transition), border-color var(--transition);
+  user-select:     none;
+  padding:        .25rem .5rem;
+  border-radius:  var(--radius-sm);
+}
+
+.pvRadioLabel:hover:not(.pv-radio--disabled) .pvRadioDot {
+  border-color: var(--primary);
+}
+
+/* --- Radio Dot (Visual) --- */
+.pvRadioDot {
+  position:   absolute;
+  left:      .25rem;
+  width:     1rem;
+  height:    1rem;
+  border:    1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: inherit;
+}
+
+.pvRadioDot::after {
+  content:        "";
+  position:      absolute;
+  top:           50%;
+  left:          50%;
+  transform:     translate(-50%, -50%) scale(0);
+  width:         .5rem;
+  height:        .5rem;
+  border-radius: 50%;
+  background:    var(--primary);
+  transition:    transform var(--transition);
+}
+
+.pvRadioInput:checked + .pvRadioLabel .pvRadioDot {
+  border-color: var(--primary);
+}
+
+.pvRadioInput:checked + .pvRadioLabel .pvRadioDot::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pvRadioInput:checked:hover:not(:disabled) + .pvRadioLabel .pvRadioDot {
+  border-color: var(--primary-hover);
+}
+
+.pvRadioInput:checked:hover:not(:disabled) + .pvRadioLabel .pvRadioDot::after {
+  background: var(--primary-hover);
+}
+
+.pvRadioInput:focus-visible + .pvRadioLabel .pvRadioDot {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+/* --- Label Text --- */
+.pvRadioLabelText {
+  font-size:   var(--font-size-sm);
+  color:      var(--text-color);
+  line-height: 1;
+  margin-left: 1.75rem;
+}
+
+/* --- Sizes --- */
+.pvRadioSM .pvRadioDot {
+  width:  .875rem;
+  height: .875rem;
+}
+
+.pvRadioSM .pvRadioDot::after {
+  width:  .4375rem;
+  height: .4375rem;
+}
+
+.pvRadioMD .pvRadioDot {
+  width:  1rem;
+  height: 1rem;
+}
+
+.pvRadioMD .pvRadioDot::after {
+  width:  .5rem;
+  height: .5rem;
+}
+
+.pvRadioLG .pvRadioDot {
+  width:  1.125rem;
+  height: 1.125rem;
+}
+
+.pvRadioLG .pvRadioDot::after {
+  width:  .625rem;
+  height: .625rem;
+}
+
+/* --- Disabled --- */
+.pvRadioDisabled {
+  opacity: .5;
+  cursor:  not-allowed;
+}
+
+.pvRadioInput:disabled + .pvRadioLabel .pvRadioDot {
+  border-color: var(--border);
+  background:  var(--bg-emphasis);
+}
+
+.pvRadioInput:disabled:checked + .pvRadioLabel .pvRadioDot::after {
+  background: var(--primary-100);
+}
+
+/* --- Invalid --- */
+.pvRadioInvalid .pvRadioDot {
+  border-color: var(--red-500) !important;
+}
+
+.pvRadioInput:checked + .pvRadioInvalid .pvRadioDot::after {
+  background: var(--red-500);
+}

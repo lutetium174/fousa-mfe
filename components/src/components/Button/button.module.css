@@ -1,0 +1,100 @@
+﻿.pv-btn {
+    display:         inline-flex;
+    align-items:     center;
+    justify-content: center;
+    gap:             0.4rem;
+    border:          1px solid transparent;
+    border-radius:   var(--radius-md);
+    font-family:     var(--font-sans);
+    font-weight:     500;
+    line-height:     1;
+    cursor:          pointer;
+    white-space:     nowrap;
+    transition:      background var(--transition), border-color var(--transition),
+    color var(--transition), box-shadow var(--transition);
+    user-select:     none;
+    position:        relative;
+    text-decoration: none;
+}
+
+/* --- Sizes --- */
+.pv-btn--sm  { padding: .375rem .75rem;  font-size: var(--font-size-sm);  }
+.pv-btn--md  { padding: .5rem  1rem;     font-size: var(--font-size-sm);  }
+.pv-btn--lg  { padding: .625rem 1.25rem; font-size: var(--font-size-base);}
+
+.pv-btn--icon-only.pv-btn--sm  { padding: .375rem; }
+.pv-btn--icon-only.pv-btn--md  { padding: .5rem;   }
+.pv-btn--icon-only.pv-btn--lg  { padding: .625rem; }
+
+/* --- Variants --- */
+.pv-btn--primary {
+    background: var(--primary);
+    color:      var(--primary-contrast);
+}
+.pv-btn--primary:hover:not(:disabled)  { background: var(--primary-hover); }
+.pv-btn--primary:active:not(:disabled) { background: var(--primary-active); }
+
+.pv-btn--secondary {
+    background:   var(--bg-emphasis);
+    color:        var(--text-color);
+    border-color: var(--border);
+}
+.pv-btn--secondary:hover:not(:disabled)  { background: var(--surface-200); }
+
+.pv-btn--outlined {
+    background:   transparent;
+    color:        var(--primary);
+    border-color: var(--primary);
+}
+.pv-btn--outlined:hover:not(:disabled) {
+    background: var(--primary-50);
+}
+
+.pv-btn--text {
+    background:   transparent;
+    color:        var(--primary);
+    border-color: transparent;
+}
+.pv-btn--text:hover:not(:disabled) { background: var(--primary-50); }
+
+.pv-btn--danger {
+    background: var(--red-500);
+    color:      #fff;
+}
+.pv-btn--danger:hover:not(:disabled)  { background: var(--red-600); }
+
+/* --- Rounded --- */
+.pv-btn--rounded { border-radius: var(--radius-full); }
+
+/* --- Disabled / loading --- */
+.pv-btn:disabled,
+.pv-btn--loading { opacity: .6; cursor: not-allowed; }
+
+/* --- Focus ring --- */
+.pv-btn:focus-visible {
+    outline:        2px solid var(--border-focus);
+    outline-offset: 2px;
+}
+
+/* --- Spinner --- */
+.pv-btn-spinner {
+    display:       inline-block;
+    width:         1em;
+    height:        1em;
+    border:        2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation:     pv-spin .6s linear infinite;
+    flex-shrink:   0;
+}
+
+@keyframes pv-spin {
+    to { transform: rotate(360deg); }
+}
+
+.pv-btn-icon {
+    display:     inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size:   1.1em;
+}

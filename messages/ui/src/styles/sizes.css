@@ -1,0 +1,16 @@
+﻿:root {
+    --size-tiny: 0.75rem;
+    --size-small: 1rem;
+    --size-medium: 1.25rem;
+    --size-large: 1.5rem;
+
+    --badge-size-tiny: 6px;
+    --badge-size-small: 14px;
+    --badge-size-medium: 18px;
+    --badge-size-large: 20px;
+}
+
+.size-tiny  { --component-size: var(--size-tiny); }
+.size-small { --component-size: var(--size-small); }
+.size-medium{ --component-size: var(--size-medium); }
+.size-large { --component-size: var(--size-large); }

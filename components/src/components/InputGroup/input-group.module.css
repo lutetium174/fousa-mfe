@@ -1,0 +1,87 @@
+.pvInputGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--input-group-gap, 0.5rem);
+  font-family: var(--font-sans);
+}
+
+.pvInputGroupHorizontal {
+  flex-direction: row;
+}
+
+.pvInputGroupVertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.pvInputGroupLabel {
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.pvInputGroupVertical .pvInputGroupLabel {
+  margin-bottom: 0.5rem;
+}
+
+.pvInputGroupAddon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-emphasis);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0 0.75rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.pvInputGroupAddon:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  border-right: none;
+}
+
+.pvInputGroupAddon:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: none;
+}
+
+.pvInputGroupHorizontal .pvInputGroupAddon:first-child {
+  border-right: 1px solid var(--border);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.pvInputGroupHorizontal .pvInputGroupAddon:last-child {
+  border-left: 1px solid var(--border);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.pvInputGroupCompact {
+  gap: 0;
+}
+
+.pvInputGroupCompact .pvInputGroupAddon:first-child,
+.pvInputGroupCompact > :first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  border-right: none;
+}
+
+.pvInputGroupCompact .pvInputGroupAddon:last-child,
+.pvInputGroupCompact > :last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: none;
+}
+
+.pvInputGroupCompact.pvInputGroupHorizontal .pvInputGroupAddon:first-child,
+.pvInputGroupCompact.pvInputGroupHorizontal > :first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  border-right: none;
+}
+
+.pvInputGroupCompact.pvInputGroupHorizontal .pvInputGroupAddon:last-child,
+.pvInputGroupCompact.pvInputGroupHorizontal > :last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: none;
+}

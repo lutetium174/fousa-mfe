@@ -1,0 +1,33 @@
+{
+  "name": "components",
+  "type": "module",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": ["src", "viewer"],
+  "main": "dist/components.cjs.js",
+  "module": "dist/components.es.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/components.es.js",
+      "require": "./dist/components.cjs.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build && pnpm --filter viewer dev"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "solid-js": "^1.9.13",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16",
+    "vite-plugin-css-injected-by-js": "^5.0.1",
+    "vite-plugin-dts": "^5.0.2",
+    "vite-plugin-solid": "^2.11.12"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.8.0"
+  }
+}

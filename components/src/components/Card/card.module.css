@@ -1,0 +1,86 @@
+/* --- Card Container --- */
+.pvCard {
+  display:        flex;
+  flex-direction: column;
+  font-family:    var(--font-sans);
+  overflow:       hidden;
+}
+
+/* --- Variants --- */
+.pvCardFlat {
+  background: var(--bg);
+  border:     1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.pvCardOutlined {
+  background: var(--bg);
+  border:     1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.pvCardElevated {
+  background: var(--bg);
+  border:     1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow:  var(--shadow-md);
+}
+
+/* --- Card Header --- */
+.pvCardHeader {
+  display:        flex;
+  align-items:   flex-start;
+  gap:            .75rem;
+  padding:       1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pvCardHeaderContent {
+  flex: 1;
+}
+
+.pvCardHeaderIcon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size:   1.25em;
+  color:       var(--primary);
+}
+
+.pvCardHeaderTitle {
+  margin:    0 0 .25rem;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color:      var(--text-color);
+  line-height: 1.2;
+}
+
+.pvCardHeaderSubtitle {
+  margin:  0;
+  font-size: var(--font-size-sm);
+  color:    var(--text-muted);
+}
+
+.pvCardHeaderActions {
+  display:     flex;
+  gap:        .5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* --- Card Content --- */
+.pvCardContent {
+  padding: 1.25rem;
+  flex:    1;
+}
+
+/* --- Card Footer --- */
+.pvCardFooter {
+  display:        flex;
+  align-items:   center;
+  justify-content: flex-end;
+  gap:            .75rem;
+  padding:       1rem 1.25rem;
+  border-top:    1px solid var(--border);
+  background:    var(--bg-subtle);
+}

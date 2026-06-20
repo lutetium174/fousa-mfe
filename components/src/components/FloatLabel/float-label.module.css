@@ -1,0 +1,108 @@
+.pvFloatLabel {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Hide Input's own label */
+.pvFloatLabel :global(.pvFieldLabel) {
+  display: none;
+}
+
+/* Make field container not add layout */
+.pvFloatLabel :global(.pvField) {
+  display: contents;
+}
+
+/* Make input wrap position relative */
+.pvFloatLabel :global(.pvInputWrap) {
+  position: relative;
+}
+
+/* Label is direct child of FloatLabel */
+.pvFloatLabel > label {
+  position: absolute;
+  left: 0.5rem;
+  pointer-events: none;
+  transition: all 0.2s;
+  color: var(--text-color-secondary);
+  padding: 0 0.25rem;
+  background: transparent;
+  z-index: 1;
+  transform-origin: top left;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ===== Over variant (default) ===== */
+
+/* Resting: centered in input */
+.pvFloatLabel > label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Floating: when FloatLabel has focus-within */
+.pvFloatLabel:focus-within > label {
+  transform: translateY(-1.5rem) scale(0.85);
+  background: var(--surface-a);
+  color: var(--primary-color);
+  top: 0;
+}
+
+/* Also float when input has value */
+.pvFloatLabel:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  transform: translateY(-1.5rem) scale(0.85);
+  background: var(--surface-a);
+  color: var(--text-color);
+  top: 0;
+}
+
+/* Invalid floating */
+.pvFloatLabelInvalid:focus-within > label,
+.pvFloatLabelInvalid:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  color: var(--red-500);
+}
+
+/* ===== In variant ===== */
+
+.pvFloatLabelIn > label {
+  top: 0.5rem;
+  transform: none;
+  left: 0.75rem;
+}
+
+.pvFloatLabelIn:focus-within > label,
+.pvFloatLabelIn:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  transform: translateY(-1.5rem) scale(0.85);
+  background: var(--surface-a);
+  color: var(--primary-color);
+  top: 0;
+  left: 0.5rem;
+}
+
+.pvFloatLabelIn.pvFloatLabelInvalid:focus-within > label,
+.pvFloatLabelIn.pvFloatLabelInvalid:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  color: var(--red-500);
+}
+
+/* ===== On variant ===== */
+
+.pvFloatLabelOn > label {
+  top: 0;
+  transform: none;
+  left: 0.5rem;
+}
+
+.pvFloatLabelOn:focus-within > label,
+.pvFloatLabelOn:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  transform: translateY(-1.5rem) scale(0.85);
+  background: var(--surface-a);
+  color: var(--primary-color);
+  left: 0.5rem;
+}
+
+.pvFloatLabelOn.pvFloatLabelInvalid:focus-within > label,
+.pvFloatLabelOn.pvFloatLabelInvalid:has(:global(.pvInput):not(:placeholder-shown)) > label {
+  color: var(--red-500);
+}

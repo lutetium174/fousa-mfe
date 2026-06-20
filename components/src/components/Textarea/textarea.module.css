@@ -1,0 +1,93 @@
+.pvField {
+  display:        flex;
+  flex-direction: column;
+  gap:            .375rem;
+  font-family:    var(--font-sans);
+}
+
+.pvFieldLabel {
+  font-size:   var(--font-size-sm);
+  font-weight: 500;
+  color:       var(--text-color);
+}
+
+/* --- Wrapper --- */
+.pvTextareaWrap {
+  position:    relative;
+  display:     flex;
+  align-items: flex-start;
+}
+
+.pvTextarea {
+  width:         100%;
+  border:        1px solid var(--border);
+  border-radius: var(--radius-md);
+  background:    var(--bg);
+  color:         var(--text-color);
+  font-family:   var(--font-sans);
+  transition:    border-color var(--transition), box-shadow var(--transition);
+  outline:       none;
+  appearance:    none;
+  resize:        vertical;
+  min-height:   6rem;
+}
+
+.pvTextarea::placeholder { color: var(--text-muted); }
+
+.pvTextarea:hover:not(:disabled) { border-color: var(--surface-400); }
+
+.pvTextarea:focus {
+  border-color: var(--border-focus);
+  box-shadow:   0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.pvTextarea:disabled {
+  background: var(--bg-emphasis);
+  color:      var(--text-muted);
+  cursor:     not-allowed;
+}
+
+/* --- Sizes --- */
+.pvTextareaWrapSM .pvTextarea { padding: .3rem .6rem;  font-size: var(--font-size-xs);  }
+.pvTextareaWrapMD .pvTextarea { padding: .45rem .75rem; font-size: var(--font-size-sm); }
+.pvTextareaWrapLG .pvTextarea { padding: .6rem 1rem;   font-size: var(--font-size-base);}
+
+/* --- Filled variant --- */
+.pvTextareaWrapFilled .pvTextarea {
+  background:    var(--bg-emphasis);
+  border-color:  transparent;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.pvTextareaWrapFilled .pvTextarea:focus {
+  border-bottom-color: var(--border-focus);
+  box-shadow: none;
+}
+
+/* --- Invalid --- */
+.pvTextareaWrapInvalid .pvTextarea {
+  border-color: var(--red-500);
+}
+
+.pvTextareaWrapInvalid .pvTextarea:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--red-500) 20%, transparent);
+}
+
+/* --- Disabled --- */
+.pvTextareaWrapDisabled .pvTextarea {
+  background: var(--bg-emphasis);
+  color:      var(--text-muted);
+  cursor:     not-allowed;
+}
+
+/* --- Helper / error text --- */
+.pvFieldMessage {
+  font-size: var(--font-size-xs);
+  color:     var(--text-muted);
+  margin:    0;
+}
+
+.pvFieldMessageError {
+  color: var(--red-600);
+}

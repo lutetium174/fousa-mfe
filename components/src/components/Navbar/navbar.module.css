@@ -1,0 +1,99 @@
+.pvNavbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* ── Parent items ── */
+.pvNavbarItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  border-left: 3px solid transparent;
+  user-select: none;
+}
+
+.pvNavbarItem:hover {
+  background-color: var(--surface-hover);
+}
+
+/* Parent active: strong primary fill + thick accent border */
+.pvNavbarItemActive {
+  background-color: var(--primary-subtle, color-mix(in srgb, var(--primary) 12%, transparent));
+  border-left-color: var(--primary);
+  color: var(--primary);
+}
+
+.pvNavbarItemActive .pvNavbarItemLabel {
+  font-weight: 700;
+}
+
+.pvNavbarItemLabel {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  flex: 1;
+}
+
+.pvNavbarItemLeft {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.pvNavbarItemIcon {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Chevron rotates when expanded */
+.pvNavbarChevron {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: transform var(--transition), opacity var(--transition);
+  margin-left: 0.25rem;
+}
+
+.pvNavbarChevronExpanded {
+  transform: rotate(180deg);
+  opacity: 0.75;
+}
+
+/* ── Subnav container ── */
+.pvNavbarSubnav {
+  /* Indented relative to parent left border region */
+  padding-left: 0;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Child items ── */
+.pvNavbarSubnavItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 2.25rem;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  border-left: 3px solid transparent;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted, color-mix(in srgb, var(--text) 70%, transparent));
+  user-select: none;
+}
+
+.pvNavbarSubnavItem:hover {
+  background-color: var(--surface-hover);
+  color: var(--text);
+}
+
+/* Child active: subtle tint + thin muted accent — intentionally quieter than parent */
+.pvNavbarSubnavItemActive {
+  background-color: color-mix(in srgb, var(--primary) 6%, transparent);
+  border-left-color: color-mix(in srgb, var(--primary) 55%, transparent);
+  color: var(--primary);
+  font-weight: 500;
+}

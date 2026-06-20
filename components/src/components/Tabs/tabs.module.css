@@ -1,0 +1,129 @@
+﻿.pv-tabs {
+    display:        flex;
+    flex-direction: column;
+    font-family:    var(--font-sans);
+}
+
+/* ─── Tab list ─────────────────────────────────────────────── */
+
+.pv-tablist {
+    display:  flex;
+    position: relative;
+}
+
+/* --- Line variant (default, PrimeVue-style underline) --- */
+.pv-tablist--line {
+    border-bottom: 1px solid var(--border);
+    gap:           .125rem;
+}
+
+/* --- Pills variant --- */
+.pv-tablist--pills {
+    gap:     .375rem;
+    padding: .25rem;
+}
+
+/* --- Pills filled variant --- */
+.pv-tablist--pills-filled {
+    gap:           .25rem;
+    padding:       .25rem;
+    background:    var(--bg-emphasis);
+    border-radius: var(--radius-lg);
+}
+
+/* ─── Tab trigger ──────────────────────────────────────────── */
+
+.pv-tab {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         .55rem .9rem;
+    border:          1px solid transparent;
+    border-radius:   var(--radius-md);
+    background:      transparent;
+    color:           var(--text-muted);
+    font-family:     var(--font-sans);
+    font-size:       var(--font-size-sm);
+    font-weight:     500;
+    line-height:     1;
+    white-space:     nowrap;
+    cursor:          pointer;
+    transition:      color var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition);
+    user-select:     none;
+    text-decoration: none;
+}
+
+.pv-tab:hover:not(:disabled) {
+    color:      var(--text-color);
+    background: var(--bg-emphasis);
+}
+
+.pv-tab:disabled {
+    opacity: .45;
+    cursor:  not-allowed;
+}
+
+.pv-tab:focus-visible {
+    outline:        2px solid var(--border-focus);
+    outline-offset: 2px;
+}
+
+/* ── Active states per variant ── */
+
+/* Line */
+.pv-tablist--line .pv-tab {
+    border-radius:    var(--radius-md) var(--radius-md) 0 0;
+    margin-bottom:    -1px;           /* overlap the list border */
+    border-bottom-color: transparent;
+}
+
+.pv-tablist--line .pv-tab--active {
+    color:               var(--primary);
+    border-bottom:       2px solid var(--primary);
+    background:          transparent;
+    margin-bottom:       -1px;
+}
+
+/* Pills */
+.pv-tablist--pills .pv-tab--active {
+    color:        var(--primary);
+    background:   var(--primary-50);
+    border-color: var(--primary-100);
+}
+
+/* Pills filled */
+.pv-tablist--pills-filled .pv-tab {
+    border-radius: calc(var(--radius-lg) - 2px);
+    flex:          1;
+    justify-content: center;
+}
+
+.pv-tablist--pills-filled .pv-tab--active {
+    color:      var(--text-color);
+    background: var(--bg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ─── Tab icon ─────────────────────────────────────────────── */
+
+.pv-tab-icon {
+    display:     inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size:   1.1em;
+}
+
+/* ─── Tab panel ────────────────────────────────────────────── */
+
+.pv-tabpanel {
+    color:       var(--text-color);
+    font-size:   var(--font-size-sm);
+    line-height: 1.6;
+    outline:     none;
+}
+
+.pv-tabpanel:focus-visible {
+    outline:        2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius:  var(--radius-sm);
+}

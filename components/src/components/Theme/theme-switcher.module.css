@@ -1,0 +1,103 @@
+﻿.pv-theme-switcher {
+    display:        flex;
+    flex-direction: column;
+    gap:            1rem;
+    font-family:    var(--font-sans);
+}
+
+.pv-theme-switcher-section {
+    display:        flex;
+    flex-direction: column;
+    gap:            .5rem;
+}
+
+.pv-theme-switcher-label {
+    font-size:   var(--font-size-xs);
+    font-weight: 600;
+    color:       var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+/* --- Swatches --- */
+.pv-theme-switcher-swatches {
+    display:   flex;
+    flex-wrap: wrap;
+    gap:       .375rem;
+}
+
+.pv-theme-swatch {
+    display:       flex;
+    align-items:   center;
+    gap:           .35rem;
+    padding:       .3rem .6rem .3rem .4rem;
+    border:        1px solid var(--border);
+    border-radius: var(--radius-full);
+    background:    var(--bg-subtle);
+    cursor:        pointer;
+    font-family:   var(--font-sans);
+    font-size:     var(--font-size-xs);
+    font-weight:   500;
+    color:         var(--text-color);
+    transition:    border-color var(--transition), background var(--transition),
+    box-shadow var(--transition);
+}
+
+.pv-theme-swatch:hover {
+    border-color: var(--swatch-color);
+    background:   var(--bg-emphasis);
+}
+
+.pv-theme-swatch--active {
+    border-color: var(--swatch-color);
+    background:   var(--bg-emphasis);
+    box-shadow:   0 0 0 2px color-mix(in srgb, var(--swatch-color) 25%, transparent);
+}
+
+.pv-theme-swatch-dot {
+    width:         .65rem;
+    height:        .65rem;
+    border-radius: 50%;
+    background:    var(--swatch-color);
+    flex-shrink:   0;
+}
+
+.pv-theme-swatch-name {
+    text-transform: capitalize;
+}
+
+/* --- Mode buttons --- */
+.pv-theme-switcher-modes {
+    display: flex;
+    gap:     .375rem;
+}
+
+.pv-mode-btn {
+    padding:       .3rem .75rem;
+    border:        1px solid var(--border);
+    border-radius: var(--radius-md);
+    background:    var(--bg-subtle);
+    color:         var(--text-color);
+    font-family:   var(--font-sans);
+    font-size:     var(--font-size-xs);
+    font-weight:   500;
+    cursor:        pointer;
+    transition:    border-color var(--transition), background var(--transition),
+    color var(--transition);
+}
+
+.pv-mode-btn:hover {
+    background:   var(--bg-emphasis);
+    border-color: var(--primary);
+}
+
+.pv-mode-btn--active {
+    background:   var(--primary);
+    border-color: var(--primary);
+    color:        var(--primary-contrast);
+}
+
+.pv-mode-btn:focus-visible {
+    outline:        2px solid var(--border-focus);
+    outline-offset: 2px;
+}

@@ -1,0 +1,109 @@
+.pvDivider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.pvDividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.pvDividerContent {
+  padding: 0 1rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+/* --- Orientations --- */
+.pvDividerHorizontal {
+  flex-direction: row;
+  height: auto;
+}
+
+.pvDividerHorizontal .pvDividerLine {
+  height: 1px;
+  width: 100%;
+}
+
+.pvDividerVertical {
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+}
+
+.pvDividerVertical .pvDividerLine {
+  width: 1px;
+  height: 100%;
+}
+
+.pvDividerVertical .pvDividerContent {
+  padding: 1rem 0;
+}
+
+/* --- Types --- */
+.pvDividerSolid .pvDividerLine {
+  background-color: var(--border);
+}
+
+.pvDividerDashed .pvDividerLine {
+  border-top: 1px dashed var(--border);
+  background: transparent;
+}
+
+.pvDividerDashed.pvDividerVertical .pvDividerLine {
+  border-top: none;
+  border-left: 1px dashed var(--border);
+}
+
+.pvDividerDotted .pvDividerLine {
+  border-top: 1px dotted var(--border);
+  background: transparent;
+}
+
+.pvDividerDotted.pvDividerVertical .pvDividerLine {
+  border-top: none;
+  border-left: 1px dotted var(--border);
+}
+
+/* --- Alignment --- */
+.pvDividerStart .pvDividerContent {
+  order: -1;
+}
+
+.pvDividerCenter .pvDividerContent {
+  /* default - already centered */
+}
+
+.pvDividerEnd .pvDividerContent {
+  /* default order */
+}
+
+.pvDividerStart.pvDividerVertical .pvDividerContent {
+  order: -1;
+}
+
+.pvDividerEnd.pvDividerVertical .pvDividerContent {
+  order: 1;
+}
+
+/* --- Layout types --- */
+.pvDividerLayoutDefault {
+  gap: 1rem;
+}
+
+.pvDividerLayoutDefault.pvDividerVertical {
+  gap: 1rem;
+}
+
+.pvDividerLayoutCompact {
+  gap: 0.5rem;
+}
+
+.pvDividerLayoutCompact.pvDividerVertical {
+  gap: 0.5rem;
+}

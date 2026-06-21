@@ -1,7 +1,9 @@
-import { createContext, createSignal, useContext } from "solid-js";
+import { createContext, createSignal, Suspense, useContext } from "solid-js";
 import type { ParentComponent, Accessor } from "solid-js";
 import type { GlobalState } from "./GlobalContext";
 import { globalContext } from "./GlobalContext";
+import { I18nProvider } from "../i18n";
+import { SpinnerIcon } from "components";
 
 type GlobalContextValue = {
   state: Accessor<GlobalState>;
@@ -32,7 +34,9 @@ export const GlobalProvider: ParentComponent = (props) => {
 
   return (
     <GlobalContext.Provider value={value}>
-      {props.children}
+      <Suspense fallback={<SpinnerIcon />}>
+        <I18nProvider>{props.children}</I18nProvider>
+      </Suspense>
     </GlobalContext.Provider>
   );
 };

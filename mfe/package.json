@@ -9,8 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "components": "workspace:components",
+    "@solid-primitives/i18n": "^2.2.1",
     "@solidjs/router": "^0.16.1",
+    "components": "workspace:components",
     "solid-js": "^1.9.13"
   },
   "devDependencies": {

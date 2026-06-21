@@ -3,6 +3,7 @@ import type { MicroFrontendDefinition } from "./MicroFrontendTypes.ts";
 import { mountMicroFrontend } from "./MicroFrontendLoader.ts";
 import { Badge, SpinnerIcon } from "components";
 import { useRouter } from "../contexts/RouteContext.tsx";
+import { useI18n } from "../i18n/index.tsx";
 
 type MicroFrontendHostProps = {
   mfe: MicroFrontendDefinition;
@@ -10,6 +11,9 @@ type MicroFrontendHostProps = {
 
 export const MicroFrontendHost = (props: MicroFrontendHostProps) => {
   let containerRef: HTMLDivElement | undefined;
+
+  const {i18n} = useI18n();
+
   const [error, setError] = createSignal<string | null>(null);
   const [loading, setLoading] = createSignal(true);
   const [load, setLoad] = createSignal<string>("");
@@ -65,7 +69,7 @@ export const MicroFrontendHost = (props: MicroFrontendHostProps) => {
   return (
     <div class="mfe-host">
       {loading() && <SpinnerIcon spin />}
-      {error() && <Badge severity="danger" value="Ah Fousa! Try again." />}
+      {error() && <Badge severity="danger" value={`${i18n("errorRefresh")}`} />}
       <div ref={containerRef} class="mfe-container" id="mfe-container" />
     </div>
   );
